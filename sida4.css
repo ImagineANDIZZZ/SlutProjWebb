@@ -1,13 +1,13 @@
 .container{
     height: 100vh;
     display: grid;
-    grid-template-columns: 0.4fr 1fr 1fr 1fr 0.4fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 0.4fr 3fr 0.5fr;
     grid-template-areas:
-    "nav nav nav nav nav"
-    "header header header header header"
-    "left_sidebar main main main right_sidebar"
-    "footer footer footer footer footer";
+    "nav nav nav"
+    "header header header"
+    "main main sidebar"
+    "footer footer footer";
 }
 
 header{
@@ -22,12 +22,8 @@ main{
     grid-area:main;
     background-color: #da80c6;
 }
-.left_sidebar{
-    grid-area:left_sidebar;
-    background-color: #d7f56d;
-}
-.right_sidebar{
-    grid-area:right_sidebar;
+.sidebar{
+    grid-area:sidebar;
     background-color: #d7f56d;
 }
 footer{

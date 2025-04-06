@@ -1,32 +1,42 @@
 .container{
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: .5fr 0.4fr 3fr 0.5fr;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 0.5fr 0.4fr 3fr 0.5fr;
     grid-template-areas:
-    "nav nav nav"
-    "header header header"
-    "main main sidebar"
-    "footer footer footer";
+    "header header"
+    "navbar navbar"
+    "main sidebar"
+    "footer footer";
 }
-
-.navbar{
-    grid-area:navbar;
-    background-color: #dd1b1b;
+body{
+    color: rgb(35, 155, 185);
 }
 header{
     grid-area:header;
-    background-color: #1235a7;
+    background-color: #794909;
+    display: flex;
+}
+nav{
+    grid-area:navbar;
+    background-color: #704005;
 }
 main{
     grid-area:main;
-    background-color: #da80c6;
+    background: rgb(3,0,38);
+    background: linear-gradient(0deg, rgba(3,0,38,1) 0%, rgba(121,73,9,1) 100%);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .sidebar{
     grid-area:sidebar;
-    background-color: #d7f56d;
+    background: rgb(3,0,42);
+    background: linear-gradient(0deg, rgba(3,0,42,1) 0%, rgba(125,76,10,1) 100%);
 }
 footer{
     grid-area:footer;
-    background-color: green;
+    background-color: #030020;
+}
+.logga{
+    height: 80px;
 }
