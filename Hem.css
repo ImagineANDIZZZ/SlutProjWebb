@@ -2,7 +2,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: 0.5fr 0.4fr 3fr 0.5fr;
+    grid-template-rows: 0.5fr auto 3fr 0.5fr;
     grid-template-areas:
     "header header"
     "navbar navbar"
@@ -16,10 +16,39 @@ header{
     grid-area:header;
     background-color: #794909;
     display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+    justify-content: space-evenly;
+}
+button{
+    height: 40px
+    
 }
 nav{
     grid-area:navbar;
     background-color: #704005;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+}
+nav a {
+    color: rgb(1, 1, 1);
+    text-decoration: none;
+    padding: 0px;
+    padding: 18px;
+    display: block;
+}
+nav a:hover{
+    background-color: #666;
+    transition: 1s;
+}
+nav li {
+    float: left;
 }
 main{
     grid-area:main;
@@ -32,10 +61,12 @@ main{
     grid-area:sidebar;
     background: rgb(3,0,42);
     background: linear-gradient(0deg, rgba(3,0,42,1) 0%, rgba(125,76,10,1) 100%);
+    padding-left: 10px;
 }
 footer{
     grid-area:footer;
     background-color: #030020;
+    padding-left: 10px
 }
 .logga{
     height: 80px;
