@@ -34,3 +34,18 @@ footer{
     grid-area:footer;
     background-color: green;
 }
+
+
+
+
+
+
+
+
+background: rgb(3,0,38);
+background: linear-gradient(0deg, rgba(3,0,38,1) 0%, rgba(121,73,9,1) 100%);
+
+
+
+background: rgb(3,0,42);
+    background: linear-gradient(0deg, rgba(3,0,42,1) 0%, rgba(125,76,10,1) 100%);

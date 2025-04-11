@@ -1,13 +1,14 @@
 .container{
     height: 100vh;
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: 0.5fr auto 3fr 0.5fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr auto 1fr 2fr 0.5fr;
     grid-template-areas:
-    "header header"
-    "navbar navbar"
-    "main sidebar"
-    "footer footer";
+    "header"
+    "navbar"
+    "main"
+    "aside"
+    "footer";
 }
 body{
     color: rgb(35, 155, 185);
@@ -22,8 +23,10 @@ header{
     justify-content: space-evenly;
 }
 button{
-    height: 40px
-    
+    height: 40px;
+    border-radius: 17px;
+    border-style: solid;
+    margin-top: 15px;
 }
 nav{
     grid-area:navbar;
@@ -52,22 +55,37 @@ nav li {
 }
 main{
     grid-area:main;
-    background: rgb(3,0,38);
-    background: linear-gradient(0deg, rgba(3,0,38,1) 0%, rgba(121,73,9,1) 100%);
+    background: #3E2417;
+    background: linear-gradient(0deg, rgba(62, 36, 23, 1) 0%, rgba(121, 73, 9, 1) 100%);
     padding-left: 10px;
     padding-right: 10px;
 }
-.sidebar{
-    grid-area:sidebar;
-    background: rgb(3,0,42);
-    background: linear-gradient(0deg, rgba(3,0,42,1) 0%, rgba(125,76,10,1) 100%);
+aside{
+    grid-area:aside;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(62, 36, 23, 1) 100%);
     padding-left: 10px;
 }
 footer{
     grid-area:footer;
     background-color: #030020;
-    padding-left: 10px
+    display: flex;
+    padding-left: 10px;
+    text-align: center;
+    justify-content: space-evenly;
+}
+footer .logga{
+    width:15%
 }
 .logga{
-    height: 80px;
+    height: 60px;
+    margin-top: 2px;
 }
+#links{
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+#links h4{
+    width: 50%;
+} 
