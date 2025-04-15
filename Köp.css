@@ -1,0 +1,23 @@
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 3fr 0.5fr;
+    grid-template-areas:
+    "header header header"
+    "navbar navbar navbar"
+    "main main sidebar"
+    "footer footer footer";
+}
+main{
+    grid-area:main;
+    background: #3E2417;
+    background: linear-gradient(0deg, rgba(62, 36, 23, 1) 0%, rgba(121, 73, 9, 1) 100%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sidebar{
+    grid-area:sidebar;
+    background-color: #d7f56d;
+}
+

@@ -10,49 +10,6 @@
     "aside"
     "footer";
 }
-body{
-    color: rgb(35, 155, 185);
-}
-header{
-    grid-area:header;
-    background-color: #794909;
-    display: flex;
-    padding-left: 10px;
-    padding-top: 10px;
-    text-align: center;
-    justify-content: space-evenly;
-}
-button{
-    height: 40px;
-    border-radius: 17px;
-    border-style: solid;
-    margin-top: 15px;
-}
-nav{
-    grid-area:navbar;
-    background-color: #704005;
-}
-nav ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    overflow: hidden;
-}
-nav a {
-    color: rgb(1, 1, 1);
-    text-decoration: none;
-    padding: 0px;
-    padding: 18px;
-    display: block;
-}
-nav a:hover{
-    background-color: #666;
-    transition: 1s;
-}
-nav li {
-    float: left;
-}
 main{
     grid-area:main;
     background: #3E2417;
@@ -65,27 +22,25 @@ aside{
     background: #030026;
     background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(62, 36, 23, 1) 100%);
     padding-left: 10px;
-}
-footer{
-    grid-area:footer;
-    background-color: #030020;
     display: flex;
-    padding-left: 10px;
-    text-align: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
-footer .logga{
-    width:15%
+.item-nya-produkter{
+    width: 150px;
+    height: 245px;
+    background-color:rgb(234, 253, 252);
+    border: 7px solid #e67428;
+    border-radius: 17px;
+    padding-inline: 5px;
+    box-shadow: 8px 8px 30px rgba(245, 3, 3, 0.4);
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
-.logga{
-    height: 60px;
-    margin-top: 2px;
+ .Bild_på_NYA_produkter{
+    width: 100%;
+    height: 72%;
 }
-#links{
-    display: flex;
-    align-content: space-around;
-    flex-wrap: wrap;
+h2{
+    margin: 0px;
 }
-#links h4{
-    width: 50%;
-} 
