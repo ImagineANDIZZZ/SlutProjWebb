@@ -16,12 +16,24 @@ main{
     padding-left: 10px;
     padding-right: 10px;
 }
+button{
+    height: 40px;
+    border-radius: 10px;
+    border-style: hidden;
+    margin-top: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgb(179, 98, 23);
+    color: #ffffff;
+    margin: 10px;
+}
 .left_sidebar{
     grid-area:left_sidebar;
-    background-color: #d7f56d;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(121, 73, 9, 1) 100%);
 }
 .right_sidebar{
     grid-area:right_sidebar;
-    background-color: #d7f56d;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(121, 73, 9, 1) 100%);
 }
 
