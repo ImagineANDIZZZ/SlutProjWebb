@@ -1,13 +1,14 @@
 .container{
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto 3fr 0.5fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr 2fr 0.5fr;
     grid-template-areas:
-    "header header header"
-    "navbar navbar navbar"
-    "main main sidebar"
-    "footer footer footer";
+    "header"
+    "navbar"
+    "main"
+    "aside"
+    "footer";
 }
 main{
     grid-area:main;
@@ -16,8 +17,9 @@ main{
     padding-left: 10px;
     padding-right: 10px;
 }
-.sidebar{
-    grid-area:sidebar;
-    background-color: #d7f56d;
+aside{
+    grid-area:aside;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(62, 36, 23, 1) 100%);
 }
 
