@@ -11,6 +11,7 @@
 }
 body{
     color: rgb(35, 155, 185);
+    margin: 0 !important;
 }
 header{
     grid-area:header;
