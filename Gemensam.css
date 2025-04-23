@@ -70,6 +70,7 @@ footer{
     padding-left: 10px;
     text-align: center;
     justify-content: space-evenly;
+   /*  padding-bottom: 10px; */
 }
 footer .logga{
     padding: 10px;
