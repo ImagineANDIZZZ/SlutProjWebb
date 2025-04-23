@@ -30,6 +30,7 @@ main{
     word-wrap: break-word;
     white-space: normal;
     z-index: -1 !important;
+    
 }
 .item-produkter h4{
     margin-bottom: 0px;

@@ -25,7 +25,105 @@
                 <li><a href="Spel.html">Spel</a></li>
             </ul>
         </nav>
-        <main></main>
+        <main>
+            <section class="section"> 
+                <div class="container">
+                  <h1 class="title">Beställningsformulär</h1>
+                  <form action="https://formsubmit.co/00000000000000000000" method="POST"></form>
+                    <div class="field">
+                      <label class="label">Namn</label>
+                      <div class="control">
+                        <input class="input" type="text" name="namn" required>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">E-post</label>
+                      <div class="control">
+                        <input class="input" type="email" name="email" required>
+                      </div>
+                    </div>
+              
+                    <div class="field">
+                      <label class="label">Välj produkter</label>
+                      <div class="produkt">
+                        Brownie Delicato
+                        <button type="button" onclick="läggTill('Brownie Delicato')">+</button>
+                        <button type="button" onclick="taBort('Brownie Delicato')">−</button>
+                      </div>
+                      <div class="produkt">
+                        Godismix med sura favoriter
+                        <button type="button" onclick="läggTill('Godismix med sura favoriter')">+</button>
+                        <button type="button" onclick="taBort('Godismix med sura favoriter')">−</button>
+                      </div>
+                    </div>
+              
+                    <!-- Dold input för att skicka med produkterna -->
+                    <input type="hidden" name="beställning" id="beställningInput">
+              
+                    <div class="field">
+                      <label class="label">Din varukorg</label>
+                      <div id="varukorg" class="box">
+                        <p>Inga produkter valda än.</p>
+                      </div>
+                    </div>
+              
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button is-primary" type="submit">Skicka</button>
+                      </div>
+                      <div class="control">
+                        <button class="button is-light" type="reset" onclick="nollställVarukorg()">Avbryt</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </section>
+              
+              <script>
+                let varukorg = {};
+              
+                function uppdateraVarukorg() {
+                  const visning = document.getElementById('varukorg');
+                  const doldInput = document.getElementById('beställningInput');
+                  visning.innerHTML = '';
+                  let sammanfattning = '';
+              
+                  for (let produkt in varukorg) {
+                    if (varukorg[produkt] > 0) {
+                      const rad = document.createElement('p');
+                      rad.textContent = `${produkt} x ${varukorg[produkt]}`;
+                      visning.appendChild(rad);
+                      sammanfattning += `${produkt} x ${varukorg[produkt]}\n`;
+                    }
+                  }
+              
+                  if (sammanfattning === '') {
+                    visning.innerHTML = '<p>Inga produkter valda än.</p>';
+                  }
+              
+                  doldInput.value = sammanfattning.trim();
+                }
+              
+                function läggTill(produkt) {
+                  if (!varukorg[produkt]) varukorg[produkt] = 0;
+                  varukorg[produkt]++;
+                  uppdateraVarukorg();
+                }
+              
+                function taBort(produkt) {
+                  if (varukorg[produkt] && varukorg[produkt] > 0) {
+                    varukorg[produkt]--;
+                    uppdateraVarukorg();
+                  }
+                }
+              
+                function nollställVarukorg() {
+                  varukorg = {};
+                  uppdateraVarukorg();
+                }
+              </script>
+              
+        </main>
         <aside class="aside"></aside>
 
         <footer>
