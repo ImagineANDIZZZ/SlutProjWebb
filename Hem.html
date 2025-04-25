@@ -1,29 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="theme-light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Hem.css">
+    <link rel="stylesheet" href="Gemensam.css">
 </head>
+
 <body>
     <div class="container">
         <header>
-            <img class="logga" src="webblogga.png" alt="">
-            <h2>Företagsnamn...</h2>
+            <img class="logga" src="bilder/webblogga.png" alt="">
+            <h2>Surt & Sött</h2>
+            <div>
+                <button onclick="toggleMode()">Byt text tema</button>
+            </div>
         </header>
-        <nav>test test</nav>
+        <nav>
+            <ul>
+                <li><a href="Hem.html">Hem</a></li>
+                <li><a href="Surt.html">Surt</a></li>
+                <li><a href="Sött.html">Sött</a></li>
+                <li><a href="Köp.html">Köp</a></li>
+                <li><a href="Spel.html">Spel</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
         <main>
             <h2>Välkommen</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam et consectetur illo voluptatum excepturi mollitia ad perferendis blanditiis reiciendis sint nobis exercitationem, odit nisi numquam quaerat aliquam. Inventore molestiae ut reiciendis. Doloremque facere nobis amet recusandae laboriosam quaerat exercitationem corporis voluptate aperiam expedita </p>
+            <p>Välkommen till vår webbshop – platsen där sötma möter kvalitet! Vi på Surt och Sött älskar allt som har med godis och bakverk att göra. Hos oss hittar du både klassiska favoriter och spännande nyheter, oavsett om du är ute efter något surt, segt, krämigt eller krispigt. Vi brinner för att göra vardagen lite godare, och vi ser till att varje tugga är fylld med smak och glädje. Ta dig en titt runt på sidan och låt dig frestas!</p>
             <h3>Om vårat sortiment</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, amet nulla minima debitis aperiam adipisci? Dolores eligendi quod harum voluptate. At dignissimos ut, vitae sit culpa inventore, repellat exercitationem unde odit minima voluptate, tempora et nemo iusto minus omnis quae deleniti quasi officiis? Voluptatum architecto voluptatem quas repellendus, odit corrupti, fugit quidem corporis suscipit id nobis voluptate iste error maiores ducimus nostrum accusantium commodi, tempore libero optio quo totam? Ipsum dolor quam repellat, repudiandae hic modi deserunt aspernatur. Suscipit recusandae repellat porro quasi, maxime error</p>
+            <p>Vårt sortiment är noggrant utvalt för att erbjuda det bästa från både stora märken och småskaliga bagerier. Vi har handplockat kakor, choklad, karameller och mycket mer som passar alla smaker och tillfällen – vare sig du vill unna dig något gott själv eller ge bort en uppskattad present. Hos oss hittar du både veganska och glutenfria alternativ, och vi uppdaterar utbudet regelbundet för att du alltid ska kunna hitta något nytt och spännande.</p>
             <h3>Hur du köper</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consectetur ab unde ipsa magnam nesciunt odio officia accusantium explicabo. Corporis commodi ut officia nulla fugiat nobis, </p>
+            <p>Att handla hos oss är enkelt och smidigt! Lägg dina favoriter i varukorgen, välj leveranssätt och betala säkert med det betalalternativ som passar dig bäst. Vi erbjuder snabb leverans direkt hem till dörren, och du kan följa din beställning hela vägen. Har du frågor eller funderingar? Vår kundtjänst hjälper dig gärna – vi vill att varje köp ska kännas lika bra som det smakar!</p>
         </main>
         </main>
-        <aside class="sidebar">test test</aside>
-        <footer>test test</footer>
+        <aside class="aside">
+            <div class="flex-container-produkter">
+                <h2>Nya produkter</h2><br>
+                <h2>vår 2025!</h2>
+                <div class="item-nya-produkter">
+                    <h4>Brownie Delicato</h4>
+                    <img class="Bild_på_NYA_produkter" src="bilder/fika1.webp" alt="">
+                </div>
+                <div class="item-nya-produkter">
+                    <h4>Godismix med sura favoriter</h4>
+                    <img class="Bild_på_NYA_produkter" src="bilder/surgodis1.webp" alt="">
+                </div> 
+        </aside>
+
+
+
+
+
+        <footer>
+            <img class="logga" src="bilder/webblogga.png" alt="">
+            <div id="links">
+                <h4><a href="https://www.kakexperten.se/">kakexperten.se</a></h4>
+                <h4><a href="https://www.lyckasmedmat.se/">lyckasmedmat.se</a></h4>
+                <h4><a href="https://klippkungen.se/">klippkungen.se</a></h4>
+                <h4><a href="https://godis247.se/">godis247.se</a></h4>
+            </div>
+            <div class="socialamedier">
+                <img class="instagram" src="bilder/Instagram_icon.png" alt="">
+                <h4><a href="https://www.instagram.com/">vår instagram</a></h4>
+            </div>
+        </footer>
     </div>
+    <script>
+        function toggleMode(){
+    html = document.getElementsByTagName("html");
+    html[0].classList.toggle("theme-dark");
+    html[0].classList.toggle("theme-light");
+}
+    </script>
 </body>
 </html>

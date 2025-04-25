@@ -1,0 +1,61 @@
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+    grid-template-rows: auto auto 3fr 0.5fr;
+    grid-template-areas:
+    "header header header header"
+    "navbar navbar navbar navbar"
+    "left_sidebar main main right_sidebar"
+    "footer footer footer footer";
+}
+main{
+    grid-area:main;
+    background: #3E2417;
+    background: linear-gradient(0deg, rgba(62, 36, 23, 1) 0%, rgba(121, 73, 9, 1) 100%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.rubrik {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+.flex-container-produkter{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+.item-produkter p{
+    word-wrap: break-word;
+    white-space: normal;
+    z-index: -1 !important;
+}
+.left_sidebar{
+    grid-area:left_sidebar;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(121, 73, 9, 1) 100%);
+}
+.right_sidebar{
+    grid-area:right_sidebar;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(121, 73, 9, 1) 100%);
+}
+.item-produkter{
+    width: 135px;
+    height: 235px;
+    background-color:rgb(234, 253, 252);
+    border: 7px solid #e67428;
+    border-radius: 17px;
+    padding-inline: 5px;
+    box-shadow: 8px 8px 30px rgba(245, 3, 3, 0.4);
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.Bild_på_produkter{
+    width: 100%;
+    height: 72%;
+}
+h4{
+    margin-bottom: 0px;
+}

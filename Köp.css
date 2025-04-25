@@ -1,0 +1,25 @@
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr 2fr 0.5fr;
+    grid-template-areas:
+    "header"
+    "navbar"
+    "main"
+    "aside"
+    "footer";
+}
+main{
+    grid-area:main;
+    background: #3E2417;
+    background: linear-gradient(0deg, rgba(62, 36, 23, 1) 0%, rgba(121, 73, 9, 1) 100%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+aside{
+    grid-area:aside;
+    background: #030026;
+    background: linear-gradient(0deg, rgba(3, 0, 38, 1) 0%, rgba(62, 36, 23, 1) 100%);
+}
+
