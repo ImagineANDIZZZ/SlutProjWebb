@@ -29,31 +29,51 @@
             <section class="section"> 
                 <div class="container">
                   <h1 class="title">Beställningsformulär</h1>
-                  <form action="https://formsubmit.co/00000000000000000000" method="POST"></form>
-                    <div class="field">
-                      <label class="label">Namn</label>
+                  <form action="https://formsubmit.co/arwi07001@utb.vaxjo.se" method="POST">
+                    <div class="Andvändarnamn">
+                      <label class="label">Namn:</label>
                       <div class="control">
                         <input class="input" type="text" name="namn" required>
                       </div>
                     </div>
-                    <div class="field">
-                      <label class="label">E-post</label>
+                    <div class="E-post">
+                      <label class="label">E-post:</label>
                       <div class="control">
                         <input class="input" type="email" name="email" required>
                       </div>
                     </div>
               
                     <div class="field">
-                      <label class="label">Välj produkter</label>
+                      <h2 class="label">Välj produkter</h2>
                       <div class="produkt">
-                        Brownie Delicato
-                        <button type="button" onclick="läggTill('Brownie Delicato')">+</button>
-                        <button type="button" onclick="taBort('Brownie Delicato')">−</button>
-                      </div>
-                      <div class="produkt">
-                        Godismix med sura favoriter
                         <button type="button" onclick="läggTill('Godismix med sura favoriter')">+</button>
                         <button type="button" onclick="taBort('Godismix med sura favoriter')">−</button>
+                        Godismix med sura favoriter
+                      </div>
+                      <div class="produkt">
+                        <button type="button" onclick="läggTill('S-märke orginalet supersurt')">+</button>
+                        <button type="button" onclick="taBort('S-märke orginalet supersurt')">−</button>
+                        S-märke orginalet supersurt
+                      </div>
+                      <div class="produkt">
+                        <button type="button" onclick="läggTill('S-märke orginalet supersurt fast svart')">+</button>
+                        <button type="button" onclick="taBort('S-märke orginalet supersurt fast svart')">−</button>
+                        S-märke orginalet supersurt fast svart
+                      </div>
+                      <div class="produkt">
+                        <button type="button" onclick="läggTill('Brownie Delicato')">+</button>
+                        <button type="button" onclick="taBort('Brownie Delicato')">−</button>
+                        Brownie Delicato
+                      </div>
+                      <div class="produkt">
+                        <button type="button" onclick="läggTill('Delicatobollar')">+</button>
+                        <button type="button" onclick="taBort('Delicatobollar')">−</button>
+                        Delicatobollar
+                      </div>
+                      <div class="produkt">
+                        <button type="button" onclick="läggTill('Drömmar och havreflan')">+</button>
+                        <button type="button" onclick="taBort('Drömmar och havreflan')">−</button>
+                        Drömmar och havreflan
                       </div>
                     </div>
               
@@ -63,7 +83,6 @@
                     <div class="field">
                       <label class="label">Din varukorg</label>
                       <div id="varukorg" class="box">
-                        <p>Inga produkter valda än.</p>
                       </div>
                     </div>
               
@@ -72,57 +91,10 @@
                         <button class="button is-primary" type="submit">Skicka</button>
                       </div>
                       <div class="control">
-                        <button class="button is-light" type="reset" onclick="nollställVarukorg()">Avbryt</button>
-                      </div>
                     </div>
                   </form>
                 </div>
-              </section>
-              
-              <script>
-                let varukorg = {};
-              
-                function uppdateraVarukorg() {
-                  const visning = document.getElementById('varukorg');
-                  const doldInput = document.getElementById('beställningInput');
-                  visning.innerHTML = '';
-                  let sammanfattning = '';
-              
-                  for (let produkt in varukorg) {
-                    if (varukorg[produkt] > 0) {
-                      const rad = document.createElement('p');
-                      rad.textContent = `${produkt} x ${varukorg[produkt]}`;
-                      visning.appendChild(rad);
-                      sammanfattning += `${produkt} x ${varukorg[produkt]}\n`;
-                    }
-                  }
-              
-                  if (sammanfattning === '') {
-                    visning.innerHTML = '<p>Inga produkter valda än.</p>';
-                  }
-              
-                  doldInput.value = sammanfattning.trim();
-                }
-              
-                function läggTill(produkt) {
-                  if (!varukorg[produkt]) varukorg[produkt] = 0;
-                  varukorg[produkt]++;
-                  uppdateraVarukorg();
-                }
-              
-                function taBort(produkt) {
-                  if (varukorg[produkt] && varukorg[produkt] > 0) {
-                    varukorg[produkt]--;
-                    uppdateraVarukorg();
-                  }
-                }
-              
-                function nollställVarukorg() {
-                  varukorg = {};
-                  uppdateraVarukorg();
-                }
-              </script>
-              
+              </section>   
         </main>
         <aside class="aside"></aside>
 
@@ -141,6 +113,39 @@
         </footer>
     </div>
     <script>
+                let varukorg = {};
+              
+                function uppdateraVarukorg() {
+                  const visning = document.getElementById('varukorg');
+                  const doldInput = document.getElementById('beställningInput');
+                  visning.innerHTML = '';
+                  let sammanfattning = '';
+              
+                  for (let produkt in varukorg) {
+                    if (varukorg[produkt] > 0) {
+                      const rad = document.createElement('p');
+                      rad.textContent = `${produkt} x ${varukorg[produkt]}`;
+                      visning.appendChild(rad);
+                      sammanfattning += `${produkt} x ${varukorg[produkt]}\n`;
+                    }
+                  }
+              
+                  doldInput.value = sammanfattning.trim();
+                }
+              
+                function läggTill(produkt) {
+                  if (!varukorg[produkt]) varukorg[produkt] = 0;
+                  varukorg[produkt]++;
+                  uppdateraVarukorg();
+                }
+              
+                function taBort(produkt) {
+                  if (varukorg[produkt] && varukorg[produkt] > 0) {
+                    varukorg[produkt]--;
+                    uppdateraVarukorg();
+                  }
+                }
+
         function toggleMode(){
     html = document.getElementsByTagName("html");
     html[0].classList.toggle("theme-dark");

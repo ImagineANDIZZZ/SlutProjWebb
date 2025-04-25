@@ -17,6 +17,12 @@ main{
     padding-left: 10px;
     padding-right: 10px;
 }
+.Andvändarnamn{
+    display: flex;
+}
+.E-post{
+    display: flex;
+}
 aside{
     grid-area:aside;
     background: #030026;
