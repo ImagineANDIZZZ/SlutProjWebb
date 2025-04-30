@@ -54,5 +54,4 @@ function checkWin() {
   );
 }
 
-// Startar spelet när sidan laddas
 window.onload = startGame;
