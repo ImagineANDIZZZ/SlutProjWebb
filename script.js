@@ -52,6 +52,9 @@ function checkWin() {
   return winPatterns.some(pattern =>
     pattern.every(index => board[index] === currentPlayer)
   );
+
+  p_a =  [4,5,1,3]
+  p_b =  [2,8,0,1,1]
 }
 
 window.onload = startGame;
