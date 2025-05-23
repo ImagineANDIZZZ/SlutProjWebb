@@ -1,153 +1,170 @@
 <!DOCTYPE html>
 <html class="theme-light">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Köp.css">
-    <link rel="stylesheet" href="Gemensam.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="Köp.css">
+  <link rel="stylesheet" href="Gemensam.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <img class="logga" src="bilder/webblogga.png" alt="">
-            <h2>Surt & Sött</h2>
-            <div>
-                <button onclick="toggleMode()">Byt text tema</button>
-            </div>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="Hem.html">Hem</a></li>
-                <li><a href="Surt.html">Surt</a></li>
-                <li><a href="Sött.html">Sött</a></li>
-                <li><a href="Köp.html">Köp</a></li>
-                <li><a href="Spel.html">Spel</a></li>
-            </ul>
-        </nav>
-        <main>
-            <section class="section">  
-                  <h1 class="title">Beställningsformulär</h1>
-                  <form action="https://formsubmit.co/arwi07001@utb.vaxjo.se" method="POST">
-                    <div class="Andvändarnamn">
-                      <label class="label">Namn:</label>
-                      <div class="control">
-                        <input class="input" type="text" name="namn" required>
-                      </div>
-                    </div>
-                    <div class="E-post">
-                      <label class="label">E-post:</label>
-                      <div class="control">
-                        <input class="input" type="email" name="email" required>
-                      </div>
-                    </div>
-              
-                    <div class="field">
-                      <h2 class="label">Välj produkter</h2>
-                      <div class="produkt">
-                        <button type="button" onclick="taBort('Godismix med sura favoriter')">−</button>
-                        <button type="button" onclick="läggTill('Godismix med sura favoriter')">+</button>
-                        Godismix med sura favoriter
-                      </div>
-                      <div class="produkt">
-                        <button type="button" onclick="taBort('S-märke orginalet supersurt')">−</button>
-                        <button type="button" onclick="läggTill('S-märke orginalet supersurt')">+</button>
-                        S-märke orginalet supersurt
-                      </div>
-                      <div class="produkt">
-                        <button type="button" onclick="taBort('S-märke orginalet supersurt fast svart')">−</button>
-                        <button type="button" onclick="läggTill('S-märke orginalet supersurt fast svart')">+</button>
-                        S-märke orginalet supersurt fast svart
-                      </div>
-                      <div class="produkt">
-                        <button type="button" onclick="taBort('Brownie Delicato')">−</button>
-                        <button type="button" onclick="läggTill('Brownie Delicato')">+</button>
-                        Brownie Delicato
-                      </div>
-                      <div class="produkt">
-                        <button type="button" onclick="taBort('Delicatobollar')">−</button>
-                        <button type="button" onclick="läggTill('Delicatobollar')">+</button>
-                        Delicatobollar
-                      </div>
-                      <div class="produkt">
-                        <button type="button" onclick="taBort('Drömmar och havreflan')">−</button>
-                        <button type="button" onclick="läggTill('Drömmar och havreflan')">+</button>
-                        Drömmar och havreflan
-                      </div>
-                    </div>
-              
-                    <input type="hidden" name="beställning" id="beställningInput">
-              
-                    <div class="field">
-                      <label class="label">Din varukorg</label>
-                      <div id="varukorg" class="box">
-                      </div>
-                    </div>
-              
-                    <div class="field is-grouped">
-                      <div class="control">
-                        <button class="button is-primary" type="submit">Skicka</button>
-                      </div>
-                      <div class="control">
-                    </div>
-                  </form>
-              </section>   
-        </main>
-        <aside class="aside"></aside>
+  <div class="container">
+    <header>
+      <img class="logga" src="bilder/webblogga.png" alt="">
+      <h2>Surt & Sött</h2>
+      <div>
+        <button onclick="toggleMode()">Byt text tema</button>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="Hem.html">Hem</a></li>
+        <li><a href="Surt.html">Surt</a></li>
+        <li><a href="Sött.html">Sött</a></li>
+        <li><a href="Köp.html">Köp</a></li>
+        <li><a href="Spel.html">Spel</a></li>
+      </ul>
+    </nav>
 
-        <footer>
-            <img class="logga" src="bilder/webblogga.png" alt="">
-            <div id="links">
-                <h4><a href="https://www.kakexperten.se/">kakexperten.se</a></h4>
-                <h4><a href="https://www.lyckasmedmat.se/">lyckasmedmat.se</a></h4>
-                <h4><a href="https://klippkungen.se/">klippkungen.se</a></h4>
-                <h4><a href="https://godis247.se/">godis247.se</a></h4>
-            </div>
-            <div class="socialamedier">
-                <img class="instagram" src="bilder/Instagram_icon.png" alt="">
-                <h4><a href="https://www.instagram.com/">vår instagram</a></h4>
-            </div>
-        </footer>
-    </div>
-    <script>
-                let varukorg = {};
-              
-                function uppdateraVarukorg() {
-                  const visning = document.getElementById('varukorg');
-                  const doldInput = document.getElementById('beställningInput');
-                  visning.innerHTML = '';
-                  let sammanfattning = '';
-              
-                  for (let produkt in varukorg) {
-                    if (varukorg[produkt] > 0) {
-                      const rad = document.createElement('p');
-                      rad.textContent = `${produkt} x ${varukorg[produkt]}`;
-                      visning.appendChild(rad);
-                      sammanfattning += `${produkt} x ${varukorg[produkt]}\n`;
-                    }
-                  }
-              
-                  doldInput.value = sammanfattning.trim();
-                }
-              
-                function läggTill(produkt) {
-                  if (!varukorg[produkt]) varukorg[produkt] = 0;
-                  varukorg[produkt]++;
-                  uppdateraVarukorg();
-                }
-              
-                function taBort(produkt) {
-                  if (varukorg[produkt] && varukorg[produkt] > 0) {
-                    varukorg[produkt]--;
-                    uppdateraVarukorg();
-                  }
-                }
 
-        function toggleMode(){
-    html = document.getElementsByTagName("html");
-    html[0].classList.toggle("theme-dark");
-    html[0].classList.toggle("theme-light");
-}
-    </script>
+
+
+
+    <main>
+      <section class="section">
+        <h1 class="title">Beställningsformulär</h1>
+        <form action="https://formsubmit.co/arwi07001@utb.vaxjo.se" method="POST">
+          <div class="Andvändarnamn">
+            <label class="label">Namn:</label>
+            <div class="control">
+              <input class="input" type="text" name="namn" required>
+            </div>
+          </div>
+          <div class="E-post">
+            <label class="label">E-post:</label>
+            <div class="control">
+              <input class="input" type="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <h2 class="label">Välj produkter</h2>
+            <div class="produkt">
+              <button type="button" onclick="taBort('Godismix med sura favoriter')">−</button>
+              <button type="button" onclick="läggTill('Godismix med sura favoriter')">+</button>
+              Godismix med sura favoriter
+            </div>
+            <div class="produkt">
+              <button type="button" onclick="taBort('S-märke orginalet supersurt')">−</button>
+              <button type="button" onclick="läggTill('S-märke orginalet supersurt')">+</button>
+              S-märke orginalet supersurt
+            </div>
+            <div class="produkt">
+              <button type="button" onclick="taBort('S-märke orginalet supersurt fast svart')">−</button>
+              <button type="button" onclick="läggTill('S-märke orginalet supersurt fast svart')">+</button>
+              S-märke orginalet supersurt fast svart
+            </div>
+            <div class="produkt">
+              <button type="button" onclick="taBort('Brownie Delicato')">−</button>
+              <button type="button" onclick="läggTill('Brownie Delicato')">+</button>
+              Brownie Delicato
+            </div>
+            <div class="produkt">
+              <button type="button" onclick="taBort('Delicatobollar')">−</button>
+              <button type="button" onclick="läggTill('Delicatobollar')">+</button>
+              Delicatobollar
+            </div>
+            <div class="produkt">
+              <button type="button" onclick="taBort('Drömmar och havreflan')">−</button>
+              <button type="button" onclick="läggTill('Drömmar och havreflan')">+</button>
+              Drömmar och havreflan
+            </div>
+          </div>
+
+          <input type="hidden" name="beställning" id="beställningInput">
+
+          <div class="field">
+            <label class="label">Din varukorg</label>
+            <div id="varukorg" class="box">
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-primary" type="submit">Skicka</button>
+            </div>
+            <div class="control">
+            </div>
+        </form>
+      </section>
+    </main>
+    <aside class="aside"></aside>
+
+
+
+
+
+    <footer>
+      <img class="logga" src="bilder/webblogga.png" alt="">
+      <div id="links">
+        <h4><a href="https://www.kakexperten.se/">kakexperten.se</a></h4>
+        <h4><a href="https://www.lyckasmedmat.se/">lyckasmedmat.se</a></h4>
+        <h4><a href="https://klippkungen.se/">klippkungen.se</a></h4>
+        <h4><a href="https://godis247.se/">godis247.se</a></h4>
+      </div>
+      <div class="socialamedier">
+        <img class="instagram" src="bilder/Instagram_icon.png" alt="">
+        <h4><a href="https://www.instagram.com/">vår instagram</a></h4>
+      </div>
+    </footer>
+
+
+
+
+    
+  </div>
+  <script>
+    let varukorg = {};
+
+    function uppdateraVarukorg() {
+      const visning = document.getElementById('varukorg');
+      const doldInput = document.getElementById('beställningInput');
+      visning.innerHTML = '';
+      let sammanfattning = '';
+
+      for (let produkt in varukorg) {
+        if (varukorg[produkt] > 0) {
+          const rad = document.createElement('p');
+          rad.textContent = `${produkt} x ${varukorg[produkt]}`;
+          visning.appendChild(rad);
+          sammanfattning += `${produkt} x ${varukorg[produkt]}\n`;
+        }
+      }
+
+      doldInput.value = sammanfattning.trim();
+    }
+
+    function läggTill(produkt) {
+      if (!varukorg[produkt]) varukorg[produkt] = 0;
+      varukorg[produkt]++;
+      uppdateraVarukorg();
+    }
+
+    function taBort(produkt) {
+      if (varukorg[produkt] && varukorg[produkt] > 0) {
+        varukorg[produkt]--;
+        uppdateraVarukorg();
+      }
+    }
+
+    function toggleMode() {
+      html = document.getElementsByTagName("html");
+      html[0].classList.toggle("theme-dark");
+      html[0].classList.toggle("theme-light");
+    }
+  </script>
 </body>
+
 </html>

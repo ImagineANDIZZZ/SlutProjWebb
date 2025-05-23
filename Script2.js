@@ -29,13 +29,14 @@ function clickruta(id){
 }
 
 function CheckTheWin(id) {
-    const vinnandeKombinationer = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+    const vinnandeKombinationer = [
+           [0, 1, 2], [3, 4, 5], [6, 7, 8],
            [0, 3, 6], [1, 4, 7], [2, 5, 8],
            [0, 4, 8], [2, 4, 6]
        ];
 
-    if (player_x.length >= 3){
-          
+    if (player_x.length >= 3 &&CheckTheWin(id)==vinnandeKombinationer){
+          alert("fff")
         }
 
     }
@@ -44,4 +45,4 @@ function CheckTheWin(id) {
     let result = vinnandeKombinationer.every(val=> player_o.includes(val))
     console.log(result)
 
-}
+
